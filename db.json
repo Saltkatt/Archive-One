@@ -1,0 +1,38 @@
+{
+  "books": [
+
+    {
+      "id": 1,
+      "title": "Harry Potter and the Philosophers Stone",
+      "author": "J.K Rowling",
+      "description": "Boy finds out he is a wizard and goes to magic school.",
+      "year": "2000",
+      "language": "english",
+      "genre": "fantasy",
+      "rating": 5
+      
+  },
+  {
+      "id": 2,
+      "title": "Harry Potter and the Chamber of Secrets",
+      "author": "J.K Rowling",
+      "description": "Harry finds a giant snake in the magic school.",
+      "year": "2001",
+      "language": "english",
+      "genre": "fantasy",
+      "rating": 5
+  },
+  {
+      "id": 3,
+      "title": "Alice in Wonderland and through the Looking Glass",
+      "author": "Lewis Carroll",
+      "description": "Literary Nonsense",
+      "year": "1865",
+      "language": "english",
+      "genre": "fantasy",
+      "rating": 5
+  }
+    
+  ]
+
+}

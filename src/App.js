@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Books from './components/Books'
 import AddBook from './components/AddBook'
 import Sidebar from './components/Sidebar'
+import SearchField from './components/SearchField'
 
 function App() {
   const [showAddBook, setShowAddBook] = useState(false)
@@ -23,6 +24,27 @@ function App() {
     const data = await res.json()
 
     console.log(data)
+    return data
+  }
+
+  // Search 
+
+
+  const findByAuthor = async (searchQueries) => {
+    const search = JSON.stringify(searchQueries)
+    console.log("Author: ", searchQueries.author)
+    
+    const res = await fetch(`http://localhost:8080/archive/books/?author=${searchQueries.author}`, {
+      method: 'GET',
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+      
+    })
+    const data = await res.json()
+    console.log("Search data: ", data)
+
     return data
   }
 
@@ -68,6 +90,7 @@ const addBook = async (book) => {
       <Header onAdd={() => setShowAddBook(!showAddBook)} showAdd={showAddBook}/>
       
       {showAddBook && <AddBook onAdd={addBook}/>}
+      <SearchField onSearch={findByAuthor}/>
 
       </div>
       <div className="item2">

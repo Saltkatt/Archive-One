@@ -2,7 +2,7 @@
 
 * {
   box-sizing: border-box;
-  margin: 0;
+  margin: 5;
   padding: 0;
 }
 
@@ -35,6 +35,17 @@ body {
   padding: 30px;
   border-radius: 5px;
 }
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 10px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 10px;
+}
+
 
 .container {
   max-width: 500px;
@@ -113,25 +124,25 @@ body {
 }
 
 .form-control input {
-  width: 100%;
+  width: 99%;
   height: 40px;
-  margin: 5px;
+  margin: 5px 5px;
   padding: 3px 7px;
   font-size: 17px;
 }
 
 .form-control textarea {
-  width: 100%;
+  width: 99%;
   height: 40px;
-  margin: 5px;
+  margin: 5px 5px;
   padding: 3px 7px;
   font-size: 17px;
 }
 
 .form-control select {
-  width: 100%;
+  width: 99%;
   height: 40px;
-  margin: 5px;
+  margin: 5px 5px;
   padding: 3px 7px;
   font-size: 17px;
 }

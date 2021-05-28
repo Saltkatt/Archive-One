@@ -27,9 +27,11 @@ function App() {
     return data
   }
 
+  /**
+   * Todo:
+   * switch to new list of books after search
+   */
   // Search 
-
-
   const findByAuthor = async (searchQueries) => {
     const search = JSON.stringify(searchQueries)
     console.log("Author: ", searchQueries.author)
@@ -80,7 +82,6 @@ const addBook = async (book) => {
     {
       method: 'DELETE',
     })
-    //console.log('delete', id)
     setBooks(books.filter((book) => book.id !== id ))
   }
 

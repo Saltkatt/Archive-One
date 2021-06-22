@@ -31,7 +31,7 @@ const SearchField = ({onSearch}) => {
                 <input
                     type="text"
                     id="header-search"
-                    placeholder="search for..."
+                    placeholder="search for author"
                     value={author}
                     onChange={e => setAuthor(e.target.value)}
                     name="s"

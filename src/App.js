@@ -4,6 +4,7 @@ import Books from './components/Books'
 import AddBook from './components/AddBook'
 import Sidebar from './components/Sidebar'
 import SearchField from './components/SearchField'
+import SearchTitle from './components/SearchTitle'
 
 function App() {
   const [showAddBook, setShowAddBook] = useState(false)
@@ -37,6 +38,25 @@ function App() {
     console.log("Author: ", searchQueries.author)
     
     const res = await fetch(`http://localhost:8080/archive/books/?author=${searchQueries.author}`, {
+      method: 'GET',
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+      
+    })
+    const data = await res.json()
+    console.log("Search data: ", data)
+
+    return data
+  }
+
+  //Find by Title
+  const findByTitle = async (searchQueries) => {
+    const search = JSON.stringify(searchQueries)
+    console.log("Title: ", searchQueries.title)
+    
+    const res = await fetch(`http://localhost:8080/archive/books/title/?title=${searchQueries.title}`, {
       method: 'GET',
       headers : { 
         'Content-Type': 'application/json',
@@ -92,6 +112,7 @@ const addBook = async (book) => {
       
       {showAddBook && <AddBook onAdd={addBook}/>}
       <SearchField onSearch={findByAuthor}/>
+      <SearchTitle onSearch={findByTitle}/>
 
       </div>
       <div className="item2">
